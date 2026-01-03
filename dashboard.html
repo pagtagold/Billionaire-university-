@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadDashboard()">
+
+<header><h1>Student Dashboard</h1></header>
+
+<div class="container">
+  <div id="primary" class="card" style="display:none">
+    <h3>Primary School</h3>
+    <a href="primary.html" class="btn">Enter</a>
+  </div>
+</div>
+
+<script>
+function loadDashboard() {
+  const student = JSON.parse(localStorage.getItem("student"));
+  if (student.level === "Primary") {
+    document.getElementById("primary").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
