@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header><h1>Student Registration</h1></header>
+
+<div class="container">
+  <div class="card">
+    <input id="name" placeholder="Student Full Name">
+    <input id="parent" placeholder="Parent Name">
+    <input id="phone" placeholder="Parent Phone">
+
+    <select id="level">
+      <option value="Primary">Primary</option>
+      <option value="Secondary">Secondary</option>
+      <option value="University">University</option>
+    </select>
+
+    <button onclick="register()">Submit</button>
+  </div>
+</div>
+
+<script>
+function register() {
+  const student = {
+    name: name.value,
+    parent: parent.value,
+    phone: phone.value,
+    level: level.value
+  };
+  localStorage.setItem("student", JSON.stringify(student));
+  window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>
